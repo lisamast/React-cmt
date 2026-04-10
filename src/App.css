@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+}
+
+.active-filter {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+}
+
+.sidebar-panel {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+}
+
+.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.dark button {
+    background-color: #333;
+    color: white;
+}
+
+.dark input {
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+}
