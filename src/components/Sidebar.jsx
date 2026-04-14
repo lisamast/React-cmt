@@ -9,27 +9,18 @@ function Sidebar() {
 
     return (
         <div>
-            <nav className="nav">
-                <ul>
-                    <li>Dashboard</li>
-                    <li>Mijn taken</li>
-                </ul>
-            </nav>
+            <button onClick={toggleSidebar}>
+                {isOpen ? "Sluit zijpaneel" : "Open zijpaneel"}
+            </button>
 
-            <div>
-                <button onClick={toggleSidebar}>
-                    {isOpen ? "Sluit zijpaneel" : "Open zijpaneel"}
-                </button>
-
-                {isOpen && (
-                    <div className="sidebar-panel">
-                        <h2>Extra informatie</h2>
-                        <p>Naam: Jan</p>
-                        <p>Open taken: 3</p>
-                        <p>Tip: Werk eerst aan je belangrijkste taak.</p>
-                    </div>
-                )}
-            </div>
+            {isOpen && (
+                <div className="sidebar-panel">
+                    <h2>Extra informatie</h2>
+                    <p>Naam: Jan</p>
+                    <p>Open taken: 3</p>
+                    <p>Tip: Werk eerst aan je belangrijkste taak.</p>
+                </div>
+            )}
         </div>
     );
 }

@@ -1,12 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const TaskCard = ({ name, vak, deadline, status, omschrijving, docent, uren, onToggleStatus, id }) => {
-    // const [isCompleted, setIsCompleted] = useState(status === "Afgerond");
+const TaskCard = ({ id, name, vak, deadline, status, omschrijving, docent, uren, onToggleStatus }) => {
     const [showDetails, setShowDetails] = useState(false);
-
-    // const toggleStatus = () => {
-    //     setIsCompleted(!isCompleted);
-    // };
 
     const toggleDetails = () => {
         setShowDetails(!showDetails);
@@ -14,15 +10,16 @@ const TaskCard = ({ name, vak, deadline, status, omschrijving, docent, uren, onT
 
     return (
         <div>
-            <h2>{name}</h2>
+            <Link to={`/tasks/${id}`}>
+                <h2>{name}</h2>
+            </Link>
+
             <p>Vak: {vak}</p>
             <p>Deadline: {deadline}</p>
             <p>Status: {status}</p>
-            {/* <p>Status: {isCompleted ? "Afgerond" : "Nog niet klaar"}</p> */}
 
             <button onClick={() => onToggleStatus(id)}>
                 {status === "Afgerond" ? "Nog niet klaar" : "Afgerond"}
-                {/* {isCompleted ? "Nog niet klaar" : "Afgerond"} */}
             </button>
 
             <button onClick={toggleDetails}>
